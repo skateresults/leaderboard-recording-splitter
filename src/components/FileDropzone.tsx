@@ -53,7 +53,9 @@ export function FileDropzone({ onFileText, disabled }: FileDropzoneProps) {
       />
       <label htmlFor={inputId} className="dropzone__label">
         <span className="dropzone__title">Drop a recording file here</span>
-        <span className="dropzone__hint">or click to choose — plain text, one message per line</span>
+        <span className="dropzone__hint">
+          or click to choose — MyLaps Orbit recording (plain text, one message per line)
+        </span>
       </label>
     </div>
   )
