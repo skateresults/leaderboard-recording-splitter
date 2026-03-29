@@ -25,4 +25,4 @@ Stack: **Vite**, **React**, **TypeScript**.
 
 ## Deploy
 
-Pushes to `main` build with GitHub Actions and deploy the `dist` output to the `gh-pages` branch (other branches use a dry run). Adjust the workflow in `.github/workflows/` if your default branch or hosting setup differs.
+Pushes to `main` build with GitHub Actions and deploy the `dist` output to the `gh-pages` branch (other branches use a dry run). The CI build sets `GITHUB_PAGES` so Vite uses base `/<repo>/`, which **GitHub Project Pages** need (`username.github.io/<repo>/`). For a **user/org site** repo (`username.github.io`) served from the domain root, use `base: '/'` instead (e.g. drop the env in the workflow or override in `vite.config.ts`).

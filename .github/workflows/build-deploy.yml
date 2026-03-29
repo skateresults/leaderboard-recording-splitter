@@ -19,6 +19,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Build
         run: pnpm run build
+        env:
+          GITHUB_PAGES: "true"
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.8.0
