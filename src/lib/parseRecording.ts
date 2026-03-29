@@ -26,6 +26,26 @@ function parseFirstColumnTimestamp(line: string): number | null {
   return Number.isFinite(n) ? n : null
 }
 
+/** Subtract min(first column) so each exported race starts at timestamp 0. Lines without a leading integer are unchanged. */
+export function shiftFirstColumnTimestampsToZero(
+  lines: readonly string[],
+): string[] {
+  let minTs: number | null = null
+  for (const line of lines) {
+    const t = parseFirstColumnTimestamp(line)
+    if (t !== null) minTs = minTs === null ? t : Math.min(minTs, t)
+  }
+  if (minTs === null) return [...lines]
+
+  return lines.map((line) => {
+    const m = /^(\s*)(\d+)/.exec(line)
+    if (!m) return line
+    const ts = Number(m[2])
+    if (!Number.isFinite(ts)) return line
+    return m[1] + String(ts - minTs) + line.slice(m[0].length)
+  })
+}
+
 function parseRaceLabelFromBLine(line: string): { id: string; title: string } {
   const m = B_LINE_LABEL.exec(line)
   if (m) {
@@ -150,7 +170,9 @@ export function parseRecording(text: string): ParseRecordingResult {
   }
 
   const races: ParsedRace[] = mergedRaw.map((seg, i) => {
-    const exportLines = filterExportLines(seg.rawLines)
+    const exportLines = shiftFirstColumnTimestampsToZero(
+      filterExportLines(seg.rawLines),
+    )
     const stats = statsForLines(exportLines)
     return {
       index: i + 1,

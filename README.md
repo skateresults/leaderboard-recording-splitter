@@ -6,7 +6,7 @@ Small web app to **split a single lap-timing recording** into **one file per rac
 
 - **Race boundaries:** each `$B` line starts a new race segment. Lines **before the first `$B`** are ignored.
 - **Restarts:** consecutive `$B` blocks with the **same race id** are merged into one export.
-- **Exports:** download each race as `.txt` or everything as a ZIP. Line order and content are preserved except for dropped idle lines (see below).
+- **Exports:** download each race as `.txt` or everything as a ZIP. The **first column (timestamp)** is renumbered so it **starts at 0** for that race (same offset subtracted from every line). Line order and the rest of each line are unchanged except for dropped idle lines (see below).
 - **Idle `$F` lines:** lines matching end-of-race filler (`$F,0` with both race timers `"00:00:00"` and a whitespace-only last quoted field) are **removed** from downloads; in-race `$F` lines (e.g. running clock / status text) are kept.
 - **No `$B` in file:** the UI reports that no races were found (nothing to export).
 
