@@ -9,26 +9,26 @@ importers:
   .:
     dependencies:
       file-saver:
-        specifier: ^2.0.5
+        specifier: 2.0.5
         version: 2.0.5
       jszip:
-        specifier: ^3.10.1
+        specifier: 3.10.1
         version: 3.10.1
       react:
-        specifier: ^19.2.4
+        specifier: 19.2.4
         version: 19.2.4
       react-dom:
-        specifier: ^19.2.4
+        specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
     devDependencies:
       '@eslint/js':
-        specifier: ^9.39.4
+        specifier: 9.39.4
         version: 9.39.4
       '@types/file-saver':
-        specifier: ^2.0.7
+        specifier: 2.0.7
         version: 2.0.7
       '@types/node':
-        specifier: ^24.12.0
+        specifier: 24.12.0
         version: 24.12.0
       '@types/react':
         specifier: ^19.2.14
@@ -37,28 +37,28 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       '@vitejs/plugin-react':
-        specifier: ^6.0.1
+        specifier: 6.0.1
         version: 6.0.1(vite@8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@types/node@24.12.0))
       eslint:
-        specifier: ^9.39.4
+        specifier: 9.39.4
         version: 9.39.4
       eslint-plugin-react-hooks:
-        specifier: ^7.0.1
+        specifier: 7.0.1
         version: 7.0.1(eslint@9.39.4)
       eslint-plugin-react-refresh:
-        specifier: ^0.5.2
+        specifier: 0.5.2
         version: 0.5.2(eslint@9.39.4)
       globals:
-        specifier: ^17.4.0
+        specifier: 17.4.0
         version: 17.4.0
       typescript:
-        specifier: ~5.9.3
+        specifier: 5.9.3
         version: 5.9.3
       typescript-eslint:
-        specifier: ^8.57.0
+        specifier: 8.57.2
         version: 8.57.2(eslint@9.39.4)(typescript@5.9.3)
       vite:
-        specifier: ^8.0.1
+        specifier: 8.0.5
         version: 8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@types/node@24.12.0)
 
 packages:
